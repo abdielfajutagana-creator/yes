@@ -606,73 +606,57 @@ nav{
 }
 
 /* =========================
-   RESPONSIVE PORTFOLIO
+   DESKTOP + TABLET BOX GRID
    ========================= */
 
-/* TABLET */
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:25px;
+}
 
+/* REMOVE STAGGERED LAYOUT (make all equal boxes) */
+.portfolio-grid .project-card:nth-child(1),
+.portfolio-grid .project-card:nth-child(2),
+.portfolio-grid .project-card:nth-child(3),
+.portfolio-grid .project-card:nth-child(4),
+.portfolio-grid .project-card:nth-child(5){
+  grid-column:auto;
+}
+
+/* uniform box style */
+.project-card{
+  height:320px;
+  border-radius:25px;
+  overflow:hidden;
+}
+
+/* TABLET */
 @media(max-width:1100px){
 
   .portfolio-grid{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .portfolio-grid .project-card:nth-child(1),
-  .portfolio-grid .project-card:nth-child(2),
-  .portfolio-grid .project-card:nth-child(3),
-  .portfolio-grid .project-card:nth-child(4),
-  .portfolio-grid .project-card:nth-child(5){
-    grid-column:auto;
-  }
-
 }
 
-/* MOBILE SCROLL */
-
+/* MOBILE (KEEP YOUR HORIZONTAL SCROLL - DO NOT CHANGE) */
 @media(max-width:768px){
 
   .portfolio-grid{
     display:flex;
-
     overflow-x:auto;
-    overflow-y:hidden;
-
     gap:18px;
-
     padding-bottom:20px;
-
     scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;
   }
 
-  .portfolio-grid::-webkit-scrollbar{
-    height:8px;
-  }
-
-  .portfolio-grid::-webkit-scrollbar-thumb{
-    background:#aa8d79;
-    border-radius:20px;
-  }
-
   .project-card{
     flex:0 0 85%;
-
-    min-width:85%;
-
     height:280px;
-
     scroll-snap-align:center;
-
-    flex-shrink:0;
   }
-
-  .project-card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-  }
-
 }
 
 /* =========================
