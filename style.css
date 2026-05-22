@@ -482,7 +482,7 @@ nav{
 }
 
 /* =========================
-   PORTFOLIO - STAGGERED GRID (1 2 3 / 4 5)
+   PORTFOLIO - UPSIDE DOWN PYRAMID
    ========================= */
 
 .portfolio{
@@ -515,31 +515,35 @@ nav{
   line-height:1.8;
 }
 
-/* =========================
-   NEW GRID LAYOUT
-   ========================= */
-
 .portfolio-grid{
   display:grid;
-  grid-template-columns:repeat(6,1fr);
+  grid-template-columns:repeat(12,1fr);
   gap:25px;
   overflow:visible;
 }
 
-/* TOP ROW (1 2 3) */
+/* TOP ROW (3 CARDS) */
 
-.portfolio-grid .project-card:nth-child(1),
-.portfolio-grid .project-card:nth-child(2),
-.portfolio-grid .project-card:nth-child(3){
-  grid-column:span 2;
+.portfolio-grid .project-card:nth-child(1){
+  grid-column:1 / span 4;
 }
 
+.portfolio-grid .project-card:nth-child(2){
+  grid-column:5 / span 4;
+}
+
+.portfolio-grid .project-card:nth-child(3){
+  grid-column:9 / span 4;
+}
+
+/* BOTTOM ROW (2 CARDS CENTERED) */
+
 .portfolio-grid .project-card:nth-child(4){
-  grid-column:1 / span 3;
+  grid-column:3 / span 4;
 }
 
 .portfolio-grid .project-card:nth-child(5){
-  grid-column:4 / span 3;
+  grid-column:7 / span 4;
 }
 
 /* CARD STYLE */
@@ -589,7 +593,7 @@ nav{
   font-size:.9rem;
 }
 
-/* HOVER EFFECT (ZOOM + REVEAL) */
+/* HOVER EFFECT */
 
 .project-card:hover{
   transform:scale(1.03);
@@ -606,57 +610,65 @@ nav{
 }
 
 /* =========================
-   DESKTOP + TABLET BOX GRID
+   RESPONSIVE
    ========================= */
 
-.portfolio-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:25px;
-}
-
-/* REMOVE STAGGERED LAYOUT (make all equal boxes) */
-.portfolio-grid .project-card:nth-child(1),
-.portfolio-grid .project-card:nth-child(2),
-.portfolio-grid .project-card:nth-child(3),
-.portfolio-grid .project-card:nth-child(4),
-.portfolio-grid .project-card:nth-child(5){
-  grid-column:auto;
-}
-
-/* uniform box style */
-.project-card{
-  height:320px;
-  border-radius:25px;
-  overflow:hidden;
-}
-
 /* TABLET */
+
 @media(max-width:1100px){
 
   .portfolio-grid{
     grid-template-columns:repeat(2,1fr);
   }
 
+  .portfolio-grid .project-card:nth-child(1),
+  .portfolio-grid .project-card:nth-child(2),
+  .portfolio-grid .project-card:nth-child(3),
+  .portfolio-grid .project-card:nth-child(4),
+  .portfolio-grid .project-card:nth-child(5){
+    grid-column:auto;
+  }
+
 }
 
-/* MOBILE (KEEP YOUR HORIZONTAL SCROLL - DO NOT CHANGE) */
+/* MOBILE SCROLL */
+
 @media(max-width:768px){
 
   .portfolio-grid{
     display:flex;
     overflow-x:auto;
+    overflow-y:hidden;
     gap:18px;
     padding-bottom:20px;
     scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;
   }
 
+  .portfolio-grid::-webkit-scrollbar{
+    height:8px;
+  }
+
+  .portfolio-grid::-webkit-scrollbar-thumb{
+    background:#aa8d79;
+    border-radius:20px;
+  }
+
   .project-card{
     flex:0 0 85%;
+    min-width:85%;
     height:280px;
     scroll-snap-align:center;
+    flex-shrink:0;
   }
+
+  .project-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
 }
 
 /* =========================
