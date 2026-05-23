@@ -14,6 +14,8 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body>
@@ -348,7 +350,6 @@
 <section class="contact" id="contact">
 
   <div class="contact-header">
-
     <span class="section-tag">CONTACT</span>
 
     <h2>
@@ -359,71 +360,42 @@
     <p>
       Feel free to reach out — I’m open to collaborations and opportunities.
     </p>
-
   </div>
 
-  <div class="contact-container">
+  <!-- CONTACT FORM -->
+  <form class="contact-form">
 
-    <!-- LEFT INFO -->
-
-    <div class="contact-info">
-
-      <a class="info-card" href="https://www.facebook.com/dont.imcooked" target="_blank">
-        <h3>Facebook</h3>
-        <p>Beam Fajutagana</p>
-      </a>
-
-      <a class="info-card" href="https://www.instagram.com/llejmyr.__/" target="_blank">
-        <h3>Instagram</h3>
-        <p>@llejmyr.__</p>
-      </a>
-
-      <a class="info-card" href="https://www.linkedin.com/in/rymjell-f-a-420661371/" target="_blank">
-        <h3>LinkedIn</h3>
-        <p>Rymjell A. F. </p>
-      </a>
-
-      <a class="info-card" href="https://github.com/abdielfajutagana-creator" target="_blank">
-        <h3>GitHub</h3>
-        <p>abdielfajutagana-creator</p>
-      </a>
-
-      <a class="info-card">
-        <h3>Email</h3>
-        <p>abdielfajutagana@gmail.com</p>
-      </a>
-
-      <a class="info-card">
-        <h3>Phone</h3>
-        <p>+63 924 223 7185</p>
-      </a>
-
-      <div class="contact-note">
-        <p>I usually respond within 24–48 hours.</p>
-      </div>
-
+    <div class="input-row">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
     </div>
 
-    <!-- RIGHT FORM -->
+    <input type="text" placeholder="Subject">
+    <textarea placeholder="Your Message" required></textarea>
 
-    <form class="contact-form">
+    <button type="submit">Send Message</button>
 
-      <div class="input-row">
-
-        <input type="text" placeholder="Your Name" required>
-
-        <input type="email" placeholder="Your Email" required>
-
+    <!-- EMAIL + PHONE INSIDE FORM -->
+    <div class="contact-info-inline">
+      <div class="info-mini">
+        <h4>Email</h4>
+        <p>abdielfajutagana@gmail.com</p>
       </div>
 
-      <input type="text" placeholder="Subject">
+      <div class="info-mini">
+        <h4>Phone</h4>
+        <p>+63 924 223 7185</p>
+      </div>
+    </div>
 
-      <textarea placeholder="Your Message"></textarea>
+  </form>
 
-      <button type="submit">Send Message</button>
-
-    </form>
-
+  <!-- SOCIAL ICONS OUTSIDE FORM (FIXED) -->
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
   </div>
 
 </section>
